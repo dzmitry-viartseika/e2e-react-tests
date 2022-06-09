@@ -5,14 +5,21 @@ const TodoItem = ({ id, text, completed }) => {
   const dispatch = useDispatch();
 
   return (
-    <li>
+    <li data-test-id="todo-item">
       <input
+        data-test-id="todo-item-checkbox"
         type='checkbox'
         checked={completed}
         onChange={() => dispatch(toggleComplete({ id }))}
       />
-      <span>{text}</span>
-      <span onClick={() => dispatch(removeTodo({id}))}>&times;</span>
+      <span
+          data-test-id="todo-item-text"
+      >
+          {text}
+      </span>
+      <span
+          data-test-id="todo-item-deleting"
+          onClick={() => dispatch(removeTodo({id}))}>&times;</span>
     </li>
   );
 };
