@@ -14,4 +14,4 @@ describe('App E2E', () => {
         cy.get('[data-test-id="todo-item-text"]').should('have.text', 'Learn React');
         cy.get('[data-test-id="add-new-task-input"]').should('have.value', '');
     })
-})
+});
