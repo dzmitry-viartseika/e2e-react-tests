@@ -26,6 +26,7 @@ function App() {
     <div className='App'>
       <NewTodoForm
         value={text}
+        isDisabled={!text}
         updateText={setText}
         handleAction={handleAction}
         handleHideAction={handleHideAction}

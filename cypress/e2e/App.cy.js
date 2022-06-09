@@ -37,4 +37,9 @@ describe('App E2E', () => {
         cy.get('[data-test-id="add-todo-hide-completed-tasks"]').click();
         cy.get('[data-test-id="todo-item"]').should('have.length', 0);
     })
+
+    it('should disabled button', () => {
+        cy.get('[data-test-id="add-new-task-input"]').should('have.value', '');
+        cy.get('[data-test-id="add-todo-button"]').should('be.disabled');
+    })
 });
