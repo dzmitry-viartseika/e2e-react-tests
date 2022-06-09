@@ -3,6 +3,7 @@ describe('App E2E', () => {
         cy.visit('/');
 
         cy.get('[data-test-id="add-new-task-input"]').should('have.value', '');
+        cy.get('[data-test-id="add-new-task-input"]').invoke('attr', 'placeholder').should('contain', 'Add new task');
         cy.get('[data-test-id="add-todo-button"]').should('have.text', 'Add todo');
     });
 

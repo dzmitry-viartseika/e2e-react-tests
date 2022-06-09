@@ -3,8 +3,7 @@ const NewTodoForm = ({ value, updateText, handleAction }) => {
     <label>
       <input
         data-test-id="add-new-task-input"
-        data
-        placeholer='new todo'
+        placeholder="Add new task"
         value={value}
         onChange={(e) => updateText(e.target.value)}
       />
