@@ -1,9 +1,8 @@
 import {useState} from 'react';
-import { useDispatch } from 'react-redux';
-
-import { addTodo } from './store/todoSlice';
+import { addTodo, hideCompletedTodo } from './store/todoSlice';
 import NewTodoForm from './components/NewTodoForm';
 import TodoList from './components/TodoList';
+import { useDispatch } from 'react-redux';
 
 import './App.css';
 
@@ -19,12 +18,17 @@ function App() {
     }
   }
 
+  const handleHideAction = () => {
+    dispatch(hideCompletedTodo());
+  };
+
   return (
     <div className='App'>
       <NewTodoForm
         value={text}
         updateText={setText}
         handleAction={handleAction}
+        handleHideAction={handleHideAction}
       />
       <TodoList />
     </div>

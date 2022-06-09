@@ -1,4 +1,4 @@
-const NewTodoForm = ({ value, updateText, handleAction }) => {
+const NewTodoForm = ({ value, updateText, handleAction, handleHideAction }) => {
   return (
     <label>
       <input
@@ -11,6 +11,10 @@ const NewTodoForm = ({ value, updateText, handleAction }) => {
           onClick={handleAction}
           data-test-id="add-todo-button"
       >Add todo</button>
+      <button
+          onClick={handleHideAction}
+          data-test-id="add-todo-hide-completed-tasks"
+      >Hide completed tasks</button>
     </label>
   );
 };
